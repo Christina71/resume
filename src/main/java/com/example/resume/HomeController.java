@@ -16,6 +16,11 @@ public class HomeController {
     @Autowired
     ResumeRepository resumeRepository;
 
+    @RequestMapping("/")
+    public String homePage(){
+        return "index";
+    }
+
     @RequestMapping("/listexp")
     public String listExperiences(Model model) {
         model.addAttribute("resumes", resumeRepository.findAll());
